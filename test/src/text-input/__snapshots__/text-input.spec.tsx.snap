@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Input className when className is provided renders with the provided className 1`] = `
+<div
+  className="test"
+>
+  <label>
+    Test
+  </label>
+  <input
+    onChange={[Function]}
+    type="text"
+    value="test"
+  />
+</div>
+`;
+
+exports[`Text Input controlled input when value and onChange callback are provided renders with the provided value and callback 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onChange={[Function]}
+    type="text"
+    value="test"
+  />
+</div>
+`;
+
+exports[`Text Input disabled when disabled is provided renders with the provided disabled 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    disabled={true}
+    type="text"
+  />
+</div>
+`;
+
+exports[`Text Input id when id is provided renders with the provided id 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    id="test"
+    type="text"
+  />
+</div>
+`;
+
+exports[`Text Input label when the provided label is ReactElement renders with the provided label 1`] = `
+<div
+  className=""
+>
+  <label>
+    <div>
+      Test
+    </div>
+  </label>
+  <input
+    type="text"
+  />
+</div>
+`;
+
+exports[`Text Input label when the provided label is string renders with the provided label 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    type="text"
+  />
+</div>
+`;
