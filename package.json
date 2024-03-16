@@ -21,7 +21,7 @@
     "url": "https://github.com/tom-ash/semanticize/issues"
   },
   "homepage": "https://github.com/tom-ash/semanticize#readme",
-  "dependencies": {
+  "peerDependencies": {
     "@babel/core": "^7.20.5",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"

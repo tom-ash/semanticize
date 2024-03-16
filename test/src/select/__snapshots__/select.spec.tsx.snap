@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select label when no label is provided renders without a label 1`] = `
+<div
+  className=""
+>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    style={
+      {
+        "caretColor": "transparent",
+      }
+    }
+    type="text"
+    value="foo"
+  />
+</div>
+`;
+
+exports[`Select label when the provided label is ReactElement renders with the provided label 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    style={
+      {
+        "caretColor": "transparent",
+      }
+    }
+    type="text"
+    value="foo"
+  />
+</div>
+`;
+
+exports[`Select label when the provided label is string renders with the provided label 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    style={
+      {
+        "caretColor": "transparent",
+      }
+    }
+    type="text"
+    value="foo"
+  />
+</div>
+`;
+
+exports[`Select options when the select's text input is focused shows options 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    style={
+      {
+        "caretColor": "transparent",
+      }
+    }
+    type="text"
+    value="foo"
+  />
+  <ul>
+    <li
+      className="current"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      Foo
+    </li>
+    <li
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      Bar
+    </li>
+    <li
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      Baz
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Select options when the select's text input is not focused does not show options 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    style={
+      {
+        "caretColor": "transparent",
+      }
+    }
+    type="text"
+    value="foo"
+  />
+</div>
+`;

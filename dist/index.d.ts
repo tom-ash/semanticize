@@ -1,3 +1,4 @@
 import { TextInput } from "./text-input/text-input";
-export { TextInput };
+import { Select } from "./select/select";
+export { TextInput, Select };
 //# sourceMappingURL=index.d.ts.map

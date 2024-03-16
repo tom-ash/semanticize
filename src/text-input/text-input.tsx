@@ -1,43 +1,69 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, KeyboardEventHandler } from "react";
 
-interface TextInputInterface {
-  (props: {
-    label: string | React.ReactElement;
-    id?: string;
-    value?: string;
-    onChange?(newValue: string, changeEvent?: ChangeEvent): void;
-    onBlur?(currentValue: string, changeEvent?: ChangeEvent): void;
-    className?: string;
-    disabled?: boolean;
-    error?: string;
-  }): React.ReactElement;
+interface TextInputProps {
+  id?: string;
+  className?: string;
+  label?: string | React.ReactElement;
+  value?: string;
+  disabled?: boolean;
+  error?: string;
+  children?: React.ReactElement | React.ReactElement[] | false;
+  onChange?(newValue: string, changeEvent?: ChangeEvent): void;
+  onFocus?(currentValue: string, changeEvent?: ChangeEvent): void;
+  onBlur?(currentValue: string, changeEvent?: ChangeEvent): void;
+  onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
+  disableCaret?: boolean;
 }
 
-export const TextInput: TextInputInterface = props => {
-  const { label, id, value, onChange, onBlur, className, disabled, error } = props;
+interface TextInputInterface {
+  (props: TextInputProps & { ref?: React.ForwardedRef<HTMLInputElement> }): React.ReactElement | null;
+}
 
-  const classNames = [className]
+export const TextInput: TextInputInterface = React.forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
+  const {
+    label,
+    id,
+    value,
+    onChange,
+    onBlur,
+    onFocus,
+    className,
+    disabled,
+    error,
+    children,
+    disableCaret = false,
+    onKeyDown,
+  } = props;
+
+  const classNames = [className];
 
   if (error) {
-    classNames.push('error')
+    classNames.push("error");
+  }
+
+  const style: React.CSSProperties = {};
+
+  if (disableCaret) {
+    style["caretColor"] = "transparent";
   }
 
   return (
-    <div className={classNames.join(' ')}>
-      <label>{label}</label>
+    <div className={classNames.join(" ")}>
+      {label && <label>{label}</label>}
       <input
+        ref={ref}
         type="text"
         id={id}
         disabled={disabled}
         value={value}
         onChange={onChange ? e => onChange(e.target.value, e) : undefined}
         onBlur={onBlur ? e => onBlur(e.target.value, e) : undefined}
+        onFocus={onFocus ? e => onFocus(e.target.value, e) : undefined}
+        style={style}
+        onKeyDown={onKeyDown}
       />
-      {error && (
-        <div className='error'>
-          {error}
-        </div>
-      )}
+      {children}
+      {error && <div className="error">{error}</div>}
     </div>
   );
-};
+});
