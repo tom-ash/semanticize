@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "tsc -b .",
+    "dev": "tsc -w & nodemon build",
     "prettier": "prettier . --write",
     "test": "jest"
   },
@@ -37,6 +38,7 @@
     "jest": "^29.6.4",
     "prettier": "3.0.2",
     "react-test-renderer": "^16.4.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "nodemon": "^3.1.0"
   }
 }
