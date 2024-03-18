@@ -13,11 +13,6 @@ interface TextInputProps {
     onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
     disableCaret?: boolean;
 }
-interface TextInputInterface {
-    (props: TextInputProps & {
-        ref?: React.ForwardedRef<HTMLInputElement>;
-    }): React.ReactElement | null;
-}
-export declare const TextInput: TextInputInterface;
+export declare const TextInput: React.ForwardRefExoticComponent<TextInputProps & React.RefAttributes<HTMLInputElement>>;
 export {};
 //# sourceMappingURL=text-input.d.ts.map

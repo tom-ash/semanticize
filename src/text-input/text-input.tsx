@@ -15,11 +15,7 @@ interface TextInputProps {
   disableCaret?: boolean;
 }
 
-interface TextInputInterface {
-  (props: TextInputProps & { ref?: React.ForwardedRef<HTMLInputElement> }): React.ReactElement | null;
-}
-
-export const TextInput: TextInputInterface = React.forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
+export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
   const {
     label,
     id,
