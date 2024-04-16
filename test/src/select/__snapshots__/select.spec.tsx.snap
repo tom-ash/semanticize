@@ -14,7 +14,7 @@ exports[`Select label when no label is provided renders without a label 1`] = `
       }
     }
     type="text"
-    value="foo"
+    value="Foo"
   />
 </div>
 `;
@@ -36,7 +36,7 @@ exports[`Select label when the provided label is ReactElement renders with the p
       }
     }
     type="text"
-    value="foo"
+    value="Foo"
   />
 </div>
 `;
@@ -58,7 +58,7 @@ exports[`Select label when the provided label is string renders with the provide
       }
     }
     type="text"
-    value="foo"
+    value="Foo"
   />
 </div>
 `;
@@ -80,7 +80,7 @@ exports[`Select options when the select's text input is focused shows options 1`
       }
     }
     type="text"
-    value="foo"
+    value="Foo"
   />
   <ul>
     <li
@@ -123,7 +123,51 @@ exports[`Select options when the select's text input is not focused does not sho
       }
     }
     type="text"
-    value="foo"
+    value="Foo"
+  />
+</div>
+`;
+
+exports[`Select value when an option is not selected it sets the text input value to an empty string 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    style={
+      {
+        "caretColor": "transparent",
+      }
+    }
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`Select value when an option is selected it sets the text input value to option text 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    style={
+      {
+        "caretColor": "transparent",
+      }
+    }
+    type="text"
+    value="Foo"
   />
 </div>
 `;

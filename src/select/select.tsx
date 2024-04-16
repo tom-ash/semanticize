@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { TextInput } from "../text-input/text-input";
 
 type Value = string | number | null;
@@ -15,7 +15,7 @@ interface SelectInterface {
     className?: string;
     label?: string | React.ReactElement;
     options: Option[];
-    value: Text;
+    value: Value;
     onSelect(value: Value): void;
   }): React.ReactElement;
 }
@@ -54,6 +54,13 @@ export const Select: SelectInterface = props => {
     }
   };
 
+  const currentOption = useMemo(
+    () => options.find((option) => {
+      return option.value === value
+    }),
+    [options, value]
+  );
+
   return (
     <TextInput
       ref={ref}
@@ -64,7 +71,7 @@ export const Select: SelectInterface = props => {
       onBlur={() => {
         changeIsFocused(false);
       }}
-      value={value}
+      value={currentOption?.text || ''}
       disableCaret={true}
       onKeyDown={onKeyDown}
     >

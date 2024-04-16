@@ -11,7 +11,7 @@ interface SelectInterface {
         className?: string;
         label?: string | React.ReactElement;
         options: Option[];
-        value: Text;
+        value: Value;
         onSelect(value: Value): void;
     }): React.ReactElement;
 }

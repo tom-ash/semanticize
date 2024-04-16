@@ -90,4 +90,34 @@ describe("Select", () => {
       });
     });
   });
+
+  describe("value", () => {
+    describe("when an option is selected", () => {
+      test("it sets the text input value to option text", () => {
+        const component = renderer.create(
+          <Select
+            label="Test"
+            {...requiredProps}
+          />
+        );
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    describe("when an option is not selected", () => {
+      test("it sets the text input value to an empty string", () => {
+        const component = renderer.create(
+          <Select
+            label="Test"
+            {...{...requiredProps, value: null}}
+          />
+        );
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+  });
 });
