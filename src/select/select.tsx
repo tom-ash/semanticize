@@ -55,9 +55,10 @@ export const Select: SelectInterface = props => {
   };
 
   const currentOption = useMemo(
-    () => options.find((option) => {
-      return option.value === value
-    }),
+    () =>
+      options.find(option => {
+        return option.value === value;
+      }),
     [options, value]
   );
 
@@ -71,7 +72,7 @@ export const Select: SelectInterface = props => {
       onBlur={() => {
         changeIsFocused(false);
       }}
-      value={currentOption?.text || ''}
+      value={currentOption?.text || ""}
       disableCaret={true}
       onKeyDown={onKeyDown}
     >

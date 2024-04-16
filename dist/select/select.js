@@ -58,12 +58,12 @@ const Select = props => {
             (_a = ref.current) === null || _a === void 0 ? void 0 : _a.blur();
         }
     };
-    const currentOption = (0, react_1.useMemo)(() => options.find((option) => {
+    const currentOption = (0, react_1.useMemo)(() => options.find(option => {
         return option.value === value;
     }), [options, value]);
     return (react_1.default.createElement(text_input_1.TextInput, { ref: ref, id: id, className: className, label: label, onFocus: () => changeIsFocused(true), onBlur: () => {
             changeIsFocused(false);
-        }, value: (currentOption === null || currentOption === void 0 ? void 0 : currentOption.text) || '', disableCaret: true, onKeyDown: onKeyDown }, isFocused && (react_1.default.createElement("ul", null, options.map((option, index) => {
+        }, value: (currentOption === null || currentOption === void 0 ? void 0 : currentOption.text) || "", disableCaret: true, onKeyDown: onKeyDown }, isFocused && (react_1.default.createElement("ul", null, options.map((option, index) => {
         const { value, text } = option;
         const className = isCurrent === index ? "current" : undefined;
         return (react_1.default.createElement("li", { key: value, className: className, onMouseDown: e => {

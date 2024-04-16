@@ -111,7 +111,7 @@ describe("Select", () => {
         const component = renderer.create(
           <Select
             label="Test"
-            {...{...requiredProps, value: null}}
+            {...{ ...requiredProps, value: null }}
           />
         );
 

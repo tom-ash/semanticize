@@ -1,3 +1,9 @@
+## 0.0.4 (April 16, 2024)
+
+### Features
+
+- Add selected option text to Select.
+
 ## 0.0.3 (March 18, 2024)
 
 ### Build
