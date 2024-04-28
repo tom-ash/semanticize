@@ -1,4 +1,4 @@
-import React, { ChangeEvent, KeyboardEventHandler } from "react";
+import React, { ChangeEvent, KeyboardEventHandler, ReactNode } from "react";
 interface TextInputProps {
     id?: string;
     className?: string;
@@ -6,12 +6,14 @@ interface TextInputProps {
     value?: string;
     disabled?: boolean;
     error?: string;
-    children?: React.ReactElement | React.ReactElement[] | false;
+    children?: ReactNode;
     onChange?(newValue: string, changeEvent?: ChangeEvent): void;
     onFocus?(currentValue: string, changeEvent?: ChangeEvent): void;
     onBlur?(currentValue: string, changeEvent?: ChangeEvent): void;
     onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
     disableCaret?: boolean;
+    placeholder?: string;
+    readOnly?: boolean;
 }
 export declare const TextInput: React.ForwardRefExoticComponent<TextInputProps & React.RefAttributes<HTMLInputElement>>;
 export {};

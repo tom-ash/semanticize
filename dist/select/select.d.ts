@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 type Value = string | number | null;
 type Text = string | undefined;
 interface Option {
@@ -12,7 +12,9 @@ interface SelectInterface {
         label?: string | React.ReactElement;
         options: Option[];
         value: Value;
+        children?: ReactNode;
         onSelect(value: Value): void;
+        placeholder?: string;
     }): React.ReactElement;
 }
 export declare const Select: SelectInterface;
