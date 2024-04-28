@@ -91,3 +91,26 @@ exports[`Text Input label when the provided label is string renders with the pro
   />
 </div>
 `;
+
+exports[`Text Input placeholder when a placeholder is not provided renders the component without the placeholder 1`] = `
+<div
+  className=""
+>
+  <input
+    style={{}}
+    type="text"
+  />
+</div>
+`;
+
+exports[`Text Input placeholder when a placeholder is provided renders the component with the placeholder 1`] = `
+<div
+  className=""
+>
+  <input
+    placeholder="Test"
+    style={{}}
+    type="text"
+  />
+</div>
+`;

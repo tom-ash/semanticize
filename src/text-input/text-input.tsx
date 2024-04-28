@@ -13,6 +13,7 @@ interface TextInputProps {
   onBlur?(currentValue: string, changeEvent?: ChangeEvent): void;
   onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
   disableCaret?: boolean;
+  placeholder?: string;
 }
 
 export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
@@ -29,6 +30,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>((pro
     children,
     disableCaret = false,
     onKeyDown,
+    placeholder,
   } = props;
 
   const classNames = [className];
@@ -57,6 +59,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>((pro
         onFocus={onFocus ? e => onFocus(e.target.value, e) : undefined}
         style={style}
         onKeyDown={onKeyDown}
+        placeholder={placeholder}
       />
       {children}
       {error && <div className="error">{error}</div>}
