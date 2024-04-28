@@ -1,5 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Select children when children are not provided it renders the component without children 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    style={
+      {
+        "caretColor": "transparent",
+      }
+    }
+    type="text"
+    value="Foo"
+  />
+</div>
+`;
+
+exports[`Select children when children are provided it renders the component with children 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    style={
+      {
+        "caretColor": "transparent",
+      }
+    }
+    type="text"
+    value=""
+  />
+  TEST
+</div>
+`;
+
 exports[`Select label when no label is provided renders without a label 1`] = `
 <div
   className=""

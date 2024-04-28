@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { ReactNode, useMemo, useState } from "react";
 import { TextInput } from "../text-input/text-input";
 
 type Value = string | number | null;
@@ -16,12 +16,13 @@ interface SelectInterface {
     label?: string | React.ReactElement;
     options: Option[];
     value: Value;
+    children?: ReactNode;
     onSelect(value: Value): void;
   }): React.ReactElement;
 }
 
 export const Select: SelectInterface = props => {
-  const { id, className, label, options, value, onSelect } = props;
+  const { id, className, label, options, value, children, onSelect } = props;
   const [isFocused, changeIsFocused] = useState(false);
   const ref = React.useRef<HTMLInputElement>(null);
 
@@ -100,6 +101,7 @@ export const Select: SelectInterface = props => {
           })}
         </ul>
       )}
+      {children}
     </TextInput>
   );
 };

@@ -120,4 +120,35 @@ describe("Select", () => {
       });
     });
   });
+
+  describe("children", () => {
+    describe("when children are not provided", () => {
+      test("it renders the component without children", () => {
+        const component = renderer.create(
+          <Select
+            label="Test"
+            {...requiredProps}
+          />
+        );
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    describe("when children are provided", () => {
+      test("it renders the component with children", () => {
+        const component = renderer.create(
+          <Select
+            label="Test"
+            children={<>TEST</>}
+            {...{ ...requiredProps, value: null }}
+          />
+        );
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+  });
 });
