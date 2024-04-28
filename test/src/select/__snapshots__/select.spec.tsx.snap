@@ -173,6 +173,52 @@ exports[`Select options when the select's text input is not focused does not sho
 </div>
 `;
 
+exports[`Select placeholder when a placeholder is not provided it renders the component without a placeholder 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    style={
+      {
+        "caretColor": "transparent",
+      }
+    }
+    type="text"
+    value="Foo"
+  />
+</div>
+`;
+
+exports[`Select placeholder when a placeholder is provided it renders the component with a placeholder 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    placeholder="Test"
+    style={
+      {
+        "caretColor": "transparent",
+      }
+    }
+    type="text"
+    value=""
+  />
+  TEST
+</div>
+`;
+
 exports[`Select value when an option is not selected it sets the text input value to an empty string 1`] = `
 <div
   className=""

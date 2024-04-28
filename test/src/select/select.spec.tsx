@@ -151,4 +151,36 @@ describe("Select", () => {
       });
     });
   });
+
+  describe("placeholder", () => {
+    describe("when a placeholder is not provided", () => {
+      test("it renders the component without a placeholder", () => {
+        const component = renderer.create(
+          <Select
+            label="Test"
+            {...requiredProps}
+          />
+        );
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    describe("when a placeholder is provided", () => {
+      test("it renders the component with a placeholder", () => {
+        const component = renderer.create(
+          <Select
+            label="Test"
+            placeholder="Test"
+            children={<>TEST</>}
+            {...{ ...requiredProps, value: null }}
+          />
+        );
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+  });
 });

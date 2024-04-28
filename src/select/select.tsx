@@ -18,11 +18,12 @@ interface SelectInterface {
     value: Value;
     children?: ReactNode;
     onSelect(value: Value): void;
+    placeholder?: string;
   }): React.ReactElement;
 }
 
 export const Select: SelectInterface = props => {
-  const { id, className, label, options, value, children, onSelect } = props;
+  const { id, className, label, options, value, children, placeholder, onSelect } = props;
   const [isFocused, changeIsFocused] = useState(false);
   const ref = React.useRef<HTMLInputElement>(null);
 
@@ -76,6 +77,7 @@ export const Select: SelectInterface = props => {
       value={currentOption?.text || ""}
       disableCaret={true}
       onKeyDown={onKeyDown}
+      placeholder={placeholder}
     >
       {isFocused && (
         <ul>
