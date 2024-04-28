@@ -110,4 +110,33 @@ describe("Text Input", () => {
       });
     });
   });
+
+  describe("readOnly", () => {
+    describe("when the readOnly attribute is not provided", () => {
+      test("renders the component as writeable", () => {
+        const component = renderer.create(<TextInput />);
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    describe("when the readOnly attribute is provided and set to false", () => {
+      test("renders the component as writeable", () => {
+        const component = renderer.create(<TextInput readOnly={false} />);
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    describe("when the readOnly attribute is provided and set to true", () => {
+      test("renders the component as read only", () => {
+        const component = renderer.create(<TextInput readOnly={true} />);
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+  });
 });

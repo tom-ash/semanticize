@@ -75,9 +75,9 @@ export const Select: SelectInterface = props => {
         changeIsFocused(false);
       }}
       value={currentOption?.text || ""}
-      disableCaret={true}
       onKeyDown={onKeyDown}
       placeholder={placeholder}
+      readOnly={true}
     >
       {isFocused && (
         <ul>

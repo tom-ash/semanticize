@@ -11,11 +11,8 @@ exports[`Select children when children are not provided it renders the component
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    style={
-      {
-        "caretColor": "transparent",
-      }
-    }
+    readOnly={true}
+    style={{}}
     type="text"
     value="Foo"
   />
@@ -33,11 +30,8 @@ exports[`Select children when children are provided it renders the component wit
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    style={
-      {
-        "caretColor": "transparent",
-      }
-    }
+    readOnly={true}
+    style={{}}
     type="text"
     value=""
   />
@@ -53,11 +47,8 @@ exports[`Select label when no label is provided renders without a label 1`] = `
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    style={
-      {
-        "caretColor": "transparent",
-      }
-    }
+    readOnly={true}
+    style={{}}
     type="text"
     value="Foo"
   />
@@ -75,11 +66,8 @@ exports[`Select label when the provided label is ReactElement renders with the p
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    style={
-      {
-        "caretColor": "transparent",
-      }
-    }
+    readOnly={true}
+    style={{}}
     type="text"
     value="Foo"
   />
@@ -97,11 +85,8 @@ exports[`Select label when the provided label is string renders with the provide
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    style={
-      {
-        "caretColor": "transparent",
-      }
-    }
+    readOnly={true}
+    style={{}}
     type="text"
     value="Foo"
   />
@@ -119,11 +104,8 @@ exports[`Select options when the select's text input is focused shows options 1`
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    style={
-      {
-        "caretColor": "transparent",
-      }
-    }
+    readOnly={true}
+    style={{}}
     type="text"
     value="Foo"
   />
@@ -162,11 +144,8 @@ exports[`Select options when the select's text input is not focused does not sho
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    style={
-      {
-        "caretColor": "transparent",
-      }
-    }
+    readOnly={true}
+    style={{}}
     type="text"
     value="Foo"
   />
@@ -184,11 +163,8 @@ exports[`Select placeholder when a placeholder is not provided it renders the co
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    style={
-      {
-        "caretColor": "transparent",
-      }
-    }
+    readOnly={true}
+    style={{}}
     type="text"
     value="Foo"
   />
@@ -207,11 +183,8 @@ exports[`Select placeholder when a placeholder is provided it renders the compon
     onFocus={[Function]}
     onKeyDown={[Function]}
     placeholder="Test"
-    style={
-      {
-        "caretColor": "transparent",
-      }
-    }
+    readOnly={true}
+    style={{}}
     type="text"
     value=""
   />
@@ -230,11 +203,8 @@ exports[`Select value when an option is not selected it sets the text input valu
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    style={
-      {
-        "caretColor": "transparent",
-      }
-    }
+    readOnly={true}
+    style={{}}
     type="text"
     value=""
   />
@@ -252,11 +222,8 @@ exports[`Select value when an option is selected it sets the text input value to
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    style={
-      {
-        "caretColor": "transparent",
-      }
-    }
+    readOnly={true}
+    style={{}}
     type="text"
     value="Foo"
   />

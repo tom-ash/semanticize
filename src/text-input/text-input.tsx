@@ -14,6 +14,7 @@ interface TextInputProps {
   onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
   disableCaret?: boolean;
   placeholder?: string;
+  readOnly?: boolean;
 }
 
 export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
@@ -31,6 +32,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>((pro
     disableCaret = false,
     onKeyDown,
     placeholder,
+    readOnly,
   } = props;
 
   const classNames = [className];
@@ -60,6 +62,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>((pro
         style={style}
         onKeyDown={onKeyDown}
         placeholder={placeholder}
+        readOnly={readOnly}
       />
       {children}
       {error && <div className="error">{error}</div>}

@@ -114,3 +114,38 @@ exports[`Text Input placeholder when a placeholder is provided renders the compo
   />
 </div>
 `;
+
+exports[`Text Input readOnly when the readOnly attribute is not provided renders the component as writeable 1`] = `
+<div
+  className=""
+>
+  <input
+    style={{}}
+    type="text"
+  />
+</div>
+`;
+
+exports[`Text Input readOnly when the readOnly attribute is provided and set to false renders the component as writeable 1`] = `
+<div
+  className=""
+>
+  <input
+    readOnly={false}
+    style={{}}
+    type="text"
+  />
+</div>
+`;
+
+exports[`Text Input readOnly when the readOnly attribute is provided and set to true renders the component as read only 1`] = `
+<div
+  className=""
+>
+  <input
+    readOnly={true}
+    style={{}}
+    type="text"
+  />
+</div>
+`;
