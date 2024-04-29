@@ -192,6 +192,109 @@ exports[`Select placeholder when a placeholder is provided it renders the compon
 </div>
 `;
 
+exports[`Select search when the component is not searchable renders the underlying text input as read only 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    readOnly={true}
+    style={{}}
+    type="text"
+    value="Foo"
+  />
+</div>
+`;
+
+exports[`Select search when the component is searchable renders the underlying text input as writable 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    readOnly={false}
+    style={{}}
+    type="text"
+    value="Foo"
+  />
+</div>
+`;
+
+exports[`Select search when the component is searchable when the search input is provided marks the first searched option as current 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    readOnly={false}
+    style={{}}
+    type="text"
+    value="b"
+  />
+  <ul>
+    <li
+      className="current"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      Bar
+    </li>
+    <li
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      Baz
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Select search when the component is searchable when the search input is provided renders only options matching the search input 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    readOnly={false}
+    style={{}}
+    type="text"
+    value="f"
+  />
+  <ul>
+    <li
+      className="current"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      Foo
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`Select value when an option is not selected it sets the text input value to an empty string 1`] = `
 <div
   className=""

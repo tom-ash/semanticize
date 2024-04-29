@@ -183,4 +183,73 @@ describe("Select", () => {
       });
     });
   });
+
+  describe("search", () => {
+    describe("when the component is not searchable", () => {
+      test("renders the underlying text input as read only", () => {
+        const component = renderer.create(
+          <Select
+            label="Test"
+            {...requiredProps}
+          />
+        );
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    describe("when the component is searchable", () => {
+      test("renders the underlying text input as writable", () => {
+        const component = renderer.create(
+          <Select
+            label="Test"
+            searchable={true}
+            {...requiredProps}
+          />
+        );
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+
+      describe("when the search input is provided", () => {
+        test("renders only options matching the search input", () => {
+          const component = renderer.create(
+            <Select
+              label="Test"
+              searchable={true}
+              {...requiredProps}
+            />
+          );
+
+          act(() => {
+            component.root.findByType("input").props.onFocus({ target: { value: "" } });
+            component.root.findByType("input").props.onChange({ target: { value: "f" } });
+          });
+
+          const tree = component.toJSON();
+          expect(tree).toMatchSnapshot();
+        });
+
+        test("marks the first searched option as current", () => {
+          const component = renderer.create(
+            <Select
+              label="Test"
+              searchable={true}
+              {...requiredProps}
+            />
+          );
+
+          act(() => {
+            component.root.findByType("input").props.onFocus({ target: { value: "" } });
+            component.root.findByType("input").props.onChange({ target: { value: "b" } });
+          });
+
+          const tree = component.toJSON();
+          expect(tree).toMatchSnapshot();
+        });
+      });
+    });
+  });
 });

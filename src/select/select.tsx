@@ -1,5 +1,6 @@
-import React, { ReactNode, useMemo, useState } from "react";
+import React, { ReactNode, useEffect, useMemo, useState } from "react";
 import { TextInput } from "../text-input/text-input";
+import escapeRegExp from "lodash/escapeRegExp";
 
 type Value = string | number | null;
 type Text = string | undefined;
@@ -19,20 +20,57 @@ interface SelectInterface {
     children?: ReactNode;
     onSelect(value: Value): void;
     placeholder?: string;
+    searchable?: boolean;
   }): React.ReactElement;
 }
 
 export const Select: SelectInterface = props => {
-  const { id, className, label, options, value, children, placeholder, onSelect } = props;
+  const {
+    id,
+    className,
+    label,
+    options: allOptions,
+    value,
+    children,
+    placeholder,
+    onSelect,
+    searchable = false,
+  } = props;
   const [isFocused, changeIsFocused] = useState(false);
   const ref = React.useRef<HTMLInputElement>(null);
 
   const [isCurrent, changeIsCurrent] = useState(0);
+  const [searchedOptions, changeSearchedOptions] = useState<Option[] | null>(null);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    if (!search) {
+      if (!searchedOptions) {
+        return;
+      } else {
+        changeSearchedOptions(null);
+      }
+    } else {
+      const newSearchedOptions = allOptions.filter(option => {
+        const regexp = new RegExp(escapeRegExp(`${search.toLowerCase()}`));
+        const isMatch = !!option.value?.toString().toLowerCase().match(regexp);
+
+        return isMatch;
+      });
+
+      changeIsCurrent(0);
+      changeSearchedOptions(newSearchedOptions);
+    }
+  }, [search]);
+
+  const options = searchedOptions || allOptions;
 
   const onKeyDown = (e: React.KeyboardEvent) => {
     const key = e.key;
 
     if (key === "ArrowDown") {
+      e.preventDefault();
+
       const newIsCurrent = isCurrent + 1;
 
       if (newIsCurrent >= options.length) {
@@ -41,6 +79,8 @@ export const Select: SelectInterface = props => {
         changeIsCurrent(newIsCurrent);
       }
     } else if (key === "ArrowUp") {
+      e.preventDefault();
+
       const newIsCurrent = isCurrent - 1;
 
       if (newIsCurrent < 0) {
@@ -49,9 +89,15 @@ export const Select: SelectInterface = props => {
         changeIsCurrent(newIsCurrent);
       }
     } else if (key === "Enter") {
-      const currentOptionValue = options[isCurrent].value;
+      e.preventDefault();
 
-      onSelect(currentOptionValue);
+      const currentOption = options[isCurrent];
+      if (!currentOption) {
+        return;
+      }
+
+      setSearch("");
+      onSelect(currentOption.value);
       ref.current?.blur();
     }
   };
@@ -74,10 +120,13 @@ export const Select: SelectInterface = props => {
       onBlur={() => {
         changeIsFocused(false);
       }}
-      value={currentOption?.text || ""}
+      value={isFocused && searchable ? search : currentOption?.text || ""}
       onKeyDown={onKeyDown}
       placeholder={placeholder}
-      readOnly={true}
+      {...(searchable && {
+        onChange: value => setSearch(value),
+      })}
+      readOnly={!searchable}
     >
       {isFocused && (
         <ul>
@@ -93,6 +142,7 @@ export const Select: SelectInterface = props => {
                   e.preventDefault();
                 }}
                 onClick={() => {
+                  setSearch("");
                   onSelect(value);
                   ref.current?.blur();
                 }}
