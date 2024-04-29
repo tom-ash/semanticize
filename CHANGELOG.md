@@ -1,6 +1,13 @@
+## 0.0.6 (April 29, 2024)
+
+### Features
+
+- Add search to Select.
+
 ## 0.0.5 (April 28, 2024)
 
 ### Features
+
 - Add children to Select.
 - Add placeholder to TextInput.
 - Add placeholder to Select.

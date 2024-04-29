@@ -15,6 +15,7 @@ interface SelectInterface {
         children?: ReactNode;
         onSelect(value: Value): void;
         placeholder?: string;
+        searchable?: boolean;
     }): React.ReactElement;
 }
 export declare const Select: SelectInterface;
