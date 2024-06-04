@@ -1,3 +1,9 @@
+## 0.0.7 (June 4, 2024)
+
+### Features
+
+- Add jsx options to Select.
+
 ## 0.0.6 (April 29, 2024)
 
 ### Features

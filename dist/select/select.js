@@ -101,7 +101,7 @@ const Select = props => {
         onChange: value => setSearch(value),
     }), { readOnly: !searchable }),
         isFocused && (react_1.default.createElement("ul", null, options.map((option, index) => {
-            const { value, text } = option;
+            const { value, text, jsx } = option;
             const className = isCurrent === index ? "current" : undefined;
             return (react_1.default.createElement("li", { key: value, className: className, onMouseDown: e => {
                     e.preventDefault();
@@ -110,7 +110,7 @@ const Select = props => {
                     setSearch("");
                     onSelect(value);
                     (_a = ref.current) === null || _a === void 0 ? void 0 : _a.blur();
-                } }, text));
+                } }, jsx || text));
         }))),
         children));
 };

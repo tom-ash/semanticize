@@ -4,6 +4,7 @@ type Text = string | undefined;
 interface Option {
     value: Value;
     text: Text;
+    jsx?: React.ReactElement;
 }
 interface SelectInterface {
     (props: {
