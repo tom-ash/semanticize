@@ -8,6 +8,7 @@ type Text = string | undefined;
 interface Option {
   value: Value;
   text: Text;
+  jsx?: React.ReactElement;
 }
 
 interface SelectInterface {
@@ -131,7 +132,7 @@ export const Select: SelectInterface = props => {
       {isFocused && (
         <ul>
           {options.map((option, index) => {
-            const { value, text } = option;
+            const { value, text, jsx } = option;
             const className = isCurrent === index ? "current" : undefined;
 
             return (
@@ -147,7 +148,7 @@ export const Select: SelectInterface = props => {
                   ref.current?.blur();
                 }}
               >
-                {text}
+                {jsx || text}
               </li>
             );
           })}

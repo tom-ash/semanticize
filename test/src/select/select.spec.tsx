@@ -252,4 +252,32 @@ describe("Select", () => {
       });
     });
   });
+
+  describe("jsx options", () => {
+    describe("when the jsx options are provided", () => {
+      test("it renders the options using the provided jsxs instead of texts", () => {
+        const options = [
+          { value: "foo", text: "Foo", jsx: <div>Foo</div> },
+          { value: "bar", text: "Bar", jsx: <div>Bar</div> },
+          { value: "baz", text: "Baz", jsx: <div>Baz</div> },
+        ];
+
+        const component = renderer.create(
+          <Select
+            label="Test"
+            options={options}
+            value='foo'
+            onSelect={onSelect}
+          />
+        );
+
+        act(() => {
+          component.root.findByType("input").props.onFocus({ target: { value: "" } });
+        });
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+  });
 });

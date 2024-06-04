@@ -39,6 +39,52 @@ exports[`Select children when children are provided it renders the component wit
 </div>
 `;
 
+exports[`Select jsx options when the jsx options are provided it renders the options using the provided jsxs instead of texts 1`] = `
+<div
+  className=""
+>
+  <label>
+    Test
+  </label>
+  <input
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    readOnly={true}
+    style={{}}
+    type="text"
+    value="Foo"
+  />
+  <ul>
+    <li
+      className="current"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      <div>
+        Foo
+      </div>
+    </li>
+    <li
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      <div>
+        Bar
+      </div>
+    </li>
+    <li
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      <div>
+        Baz
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`Select label when no label is provided renders without a label 1`] = `
 <div
   className=""
