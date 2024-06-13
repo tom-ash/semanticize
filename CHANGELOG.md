@@ -1,3 +1,9 @@
+## 0.0.8 (June 13, 2024)
+
+### Features
+
+- Add type to TextInput.
+
 ## 0.0.7 (June 4, 2024)
 
 ### Features

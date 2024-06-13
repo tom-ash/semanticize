@@ -1,6 +1,16 @@
 import React, { ChangeEvent, KeyboardEventHandler, ReactNode } from "react";
+export declare enum TextInputType {
+    TEXT = "text",
+    SEARCH = "search",
+    URL = "url",
+    EMAIL = "email",
+    TEL = "tel",
+    PASSWORD = "password",
+    NUMBER = "number"
+}
 interface TextInputProps {
     id?: string;
+    type?: TextInputType;
     className?: string;
     label?: string | React.ReactElement;
     value?: string;
