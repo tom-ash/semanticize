@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, expect, test } from "@jest/globals";
-import { TextInput } from "../../../src/text-input/text-input";
+import { TextInput, TextInputType } from "../../../src/text-input/text-input";
 import renderer from "react-test-renderer";
 
 describe("Text Input", () => {
@@ -133,6 +133,26 @@ describe("Text Input", () => {
     describe("when the readOnly attribute is provided and set to true", () => {
       test("renders the component as read only", () => {
         const component = renderer.create(<TextInput readOnly={true} />);
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+  });
+
+  describe("type", () => {
+    describe("when no type is provided", () => {
+      test("sets the type to text", () => {
+        const component = renderer.create(<TextInput />);
+
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+
+    describe("when the type is provided", () => {
+      test("sets the type to the provided value", () => {
+        const component = renderer.create(<TextInput type={TextInputType.EMAIL} />);
 
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();

@@ -149,3 +149,25 @@ exports[`Text Input readOnly when the readOnly attribute is provided and set to 
   />
 </div>
 `;
+
+exports[`Text Input type when no type is provided sets the type to text 1`] = `
+<div
+  className=""
+>
+  <input
+    style={{}}
+    type="text"
+  />
+</div>
+`;
+
+exports[`Text Input type when the type is provided sets the type to the provided value 1`] = `
+<div
+  className=""
+>
+  <input
+    style={{}}
+    type="email"
+  />
+</div>
+`;
