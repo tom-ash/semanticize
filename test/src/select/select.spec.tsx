@@ -266,7 +266,7 @@ describe("Select", () => {
           <Select
             label="Test"
             options={options}
-            value='foo'
+            value="foo"
             onSelect={onSelect}
           />
         );

@@ -41,6 +41,7 @@ exports[`Text Input disabled when disabled is provided renders with the provided
   </label>
   <input
     disabled={true}
+    onChange={[Function]}
     style={{}}
     type="text"
   />
@@ -56,6 +57,7 @@ exports[`Text Input id when id is provided renders with the provided id 1`] = `
   </label>
   <input
     id="test"
+    onChange={[Function]}
     style={{}}
     type="text"
   />
@@ -72,6 +74,7 @@ exports[`Text Input label when the provided label is ReactElement renders with t
     </div>
   </label>
   <input
+    onChange={[Function]}
     style={{}}
     type="text"
   />
@@ -86,6 +89,7 @@ exports[`Text Input label when the provided label is string renders with the pro
     Test
   </label>
   <input
+    onChange={[Function]}
     style={{}}
     type="text"
   />
@@ -97,6 +101,7 @@ exports[`Text Input placeholder when a placeholder is not provided renders the c
   className=""
 >
   <input
+    onChange={[Function]}
     style={{}}
     type="text"
   />
@@ -108,6 +113,7 @@ exports[`Text Input placeholder when a placeholder is provided renders the compo
   className=""
 >
   <input
+    onChange={[Function]}
     placeholder="Test"
     style={{}}
     type="text"
@@ -120,6 +126,7 @@ exports[`Text Input readOnly when the readOnly attribute is not provided renders
   className=""
 >
   <input
+    onChange={[Function]}
     style={{}}
     type="text"
   />
@@ -131,6 +138,7 @@ exports[`Text Input readOnly when the readOnly attribute is provided and set to 
   className=""
 >
   <input
+    onChange={[Function]}
     readOnly={false}
     style={{}}
     type="text"
@@ -143,6 +151,7 @@ exports[`Text Input readOnly when the readOnly attribute is provided and set to 
   className=""
 >
   <input
+    onChange={[Function]}
     readOnly={true}
     style={{}}
     type="text"
@@ -155,6 +164,7 @@ exports[`Text Input type when no type is provided sets the type to text 1`] = `
   className=""
 >
   <input
+    onChange={[Function]}
     style={{}}
     type="text"
   />
@@ -166,6 +176,7 @@ exports[`Text Input type when the type is provided sets the type to the provided
   className=""
 >
   <input
+    onChange={[Function]}
     style={{}}
     type="email"
   />

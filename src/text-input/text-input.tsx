@@ -1,13 +1,13 @@
-import React, { ChangeEvent, KeyboardEventHandler, ReactNode } from "react";
+import React, { ChangeEvent, KeyboardEventHandler, ReactNode, useCallback } from "react";
 
 export enum TextInputType {
-  TEXT = 'text',
-  SEARCH = 'search',
-  URL = 'url',
-  EMAIL = 'email',
-  TEL = 'tel',
-  PASSWORD = 'password',
-  NUMBER = 'number',
+  TEXT = "text",
+  SEARCH = "search",
+  URL = "url",
+  EMAIL = "email",
+  TEL = "tel",
+  PASSWORD = "password",
+  NUMBER = "number",
 }
 
 interface TextInputProps {
@@ -26,6 +26,7 @@ interface TextInputProps {
   disableCaret?: boolean;
   placeholder?: string;
   readOnly?: boolean;
+  match?: RegExp;
 }
 
 export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
@@ -33,7 +34,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>((pro
     label,
     id,
     value,
-    onChange,
+    onChange: customOnChange,
     onBlur,
     onFocus,
     className,
@@ -45,6 +46,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>((pro
     placeholder,
     readOnly,
     type = TextInputType.TEXT,
+    match,
   } = props;
 
   const classNames = [className];
@@ -58,6 +60,15 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>((pro
   if (disableCaret) {
     style["caretColor"] = "transparent";
   }
+
+  const onChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (!match || e.target.value.match(match)) {
+        customOnChange && customOnChange(e.target.value, e);
+      }
+    },
+    [match, customOnChange]
+  );
 
   return (
     <div className={classNames.join(" ")}>
@@ -73,7 +84,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>((pro
         style={style}
         onKeyDown={onKeyDown}
         onFocus={onFocus ? e => onFocus(e.target.value, e) : undefined}
-        onChange={onChange ? e => onChange(e.target.value, e) : undefined}
+        onChange={onChange}
         onBlur={onBlur ? e => onBlur(e.target.value, e) : undefined}
       />
       {children}

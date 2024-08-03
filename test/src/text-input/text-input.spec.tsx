@@ -1,7 +1,7 @@
 import React from "react";
 import { describe, expect, test } from "@jest/globals";
 import { TextInput, TextInputType } from "../../../src/text-input/text-input";
-import renderer from "react-test-renderer";
+import renderer, { act } from "react-test-renderer";
 
 describe("Text Input", () => {
   describe("label", () => {
@@ -156,6 +156,75 @@ describe("Text Input", () => {
 
         const tree = component.toJSON();
         expect(tree).toMatchSnapshot();
+      });
+    });
+  });
+
+  describe("match regex", () => {
+    describe("when no match property is provided", () => {
+      test("allows any input", () => {
+        let value = "";
+
+        const component = renderer.create(
+          <TextInput
+            value={value}
+            onChange={newValue => {
+              value = newValue;
+            }}
+          />
+        );
+
+        act(() => {
+          component.root.findByType("input").props.onChange({ target: { value: "a" } });
+        });
+
+        expect(value).toBe("a");
+      });
+    });
+
+    describe("when the match property is provided", () => {
+      describe("when the input matches the match property regex", () => {
+        test("allows the input", () => {
+          let value = "";
+
+          const component = renderer.create(
+            <TextInput
+              value={value}
+              match={/a/}
+              onChange={newValue => {
+                value = newValue;
+              }}
+            />
+          );
+
+          act(() => {
+            component.root.findByType("input").props.onChange({ target: { value: "a" } });
+          });
+
+          expect(value).toBe("a");
+        });
+      });
+
+      describe("when the input does not match the match property regex", () => {
+        test("disallows the input", () => {
+          let value = "";
+
+          const component = renderer.create(
+            <TextInput
+              value={value}
+              match={/a/}
+              onChange={newValue => {
+                value = newValue;
+              }}
+            />
+          );
+
+          act(() => {
+            component.root.findByType("input").props.onChange({ target: { value: "b" } });
+          });
+
+          expect(value).toBe("");
+        });
       });
     });
   });

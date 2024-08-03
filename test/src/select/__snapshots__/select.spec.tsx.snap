@@ -9,6 +9,7 @@ exports[`Select children when children are not provided it renders the component
   </label>
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     readOnly={true}
@@ -28,6 +29,7 @@ exports[`Select children when children are provided it renders the component wit
   </label>
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     readOnly={true}
@@ -48,6 +50,7 @@ exports[`Select jsx options when the jsx options are provided it renders the opt
   </label>
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     readOnly={true}
@@ -91,6 +94,7 @@ exports[`Select label when no label is provided renders without a label 1`] = `
 >
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     readOnly={true}
@@ -110,6 +114,7 @@ exports[`Select label when the provided label is ReactElement renders with the p
   </label>
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     readOnly={true}
@@ -129,6 +134,7 @@ exports[`Select label when the provided label is string renders with the provide
   </label>
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     readOnly={true}
@@ -148,6 +154,7 @@ exports[`Select options when the select's text input is focused shows options 1`
   </label>
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     readOnly={true}
@@ -188,6 +195,7 @@ exports[`Select options when the select's text input is not focused does not sho
   </label>
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     readOnly={true}
@@ -207,6 +215,7 @@ exports[`Select placeholder when a placeholder is not provided it renders the co
   </label>
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     readOnly={true}
@@ -226,6 +235,7 @@ exports[`Select placeholder when a placeholder is provided it renders the compon
   </label>
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     placeholder="Test"
@@ -247,6 +257,7 @@ exports[`Select search when the component is not searchable renders the underlyi
   </label>
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     readOnly={true}
@@ -350,6 +361,7 @@ exports[`Select value when an option is not selected it sets the text input valu
   </label>
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     readOnly={true}
@@ -369,6 +381,7 @@ exports[`Select value when an option is selected it sets the text input value to
   </label>
   <input
     onBlur={[Function]}
+    onChange={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     readOnly={true}
