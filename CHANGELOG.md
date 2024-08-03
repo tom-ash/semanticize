@@ -1,3 +1,9 @@
+## 0.0.9 (August 3, 2024)
+
+### Features
+
+- Add match to TextInput.
+
 ## 0.0.8 (June 13, 2024)
 
 ### Features

@@ -24,6 +24,7 @@ interface TextInputProps {
     disableCaret?: boolean;
     placeholder?: string;
     readOnly?: boolean;
+    match?: RegExp;
 }
 export declare const TextInput: React.ForwardRefExoticComponent<TextInputProps & React.RefAttributes<HTMLInputElement>>;
 export {};
