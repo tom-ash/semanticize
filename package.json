@@ -1,6 +1,6 @@
 {
   "name": "semanticize",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Semantic components for React.",
   "main": "dist/index.js",
   "exports": {

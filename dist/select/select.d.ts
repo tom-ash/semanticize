@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 type Value = string | number | null;
-type Text = string | undefined;
+type Text = string;
 interface Option {
     value: Value;
     text: Text;

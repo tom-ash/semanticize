@@ -48,9 +48,8 @@ const Select = props => {
         }
         else {
             const newSearchedOptions = allOptions.filter(option => {
-                var _a;
                 const regexp = new RegExp((0, escapeRegExp_1.default)(`${search.toLowerCase()}`));
-                const isMatch = !!((_a = option.value) === null || _a === void 0 ? void 0 : _a.toString().toLowerCase().match(regexp));
+                const isMatch = !!option.text.toLowerCase().match(regexp);
                 return isMatch;
             });
             changeIsCurrent(0);

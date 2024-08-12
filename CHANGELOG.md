@@ -1,3 +1,9 @@
+## 0.0.10 (August 12, 2024)
+
+### Features
+
+- Search options by text in Select.
+
 ## 0.0.9 (August 3, 2024)
 
 ### Features
