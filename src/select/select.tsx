@@ -3,7 +3,7 @@ import { TextInput } from "../text-input/text-input";
 import escapeRegExp from "lodash/escapeRegExp";
 
 type Value = string | number | null;
-type Text = string | undefined;
+type Text = string;
 
 interface Option {
   value: Value;
@@ -54,7 +54,7 @@ export const Select: SelectInterface = props => {
     } else {
       const newSearchedOptions = allOptions.filter(option => {
         const regexp = new RegExp(escapeRegExp(`${search.toLowerCase()}`));
-        const isMatch = !!option.value?.toString().toLowerCase().match(regexp);
+        const isMatch = !!option.text.toLowerCase().match(regexp);
 
         return isMatch;
       });
